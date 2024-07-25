@@ -1,0 +1,25 @@
+/* src/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+    background: #f4f4f4;
+  }
+  
+  .note-item {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pagination button {
+    margin: 5px;
+    padding: 5px 10px;
+  }
+  
+  .pagination .active {
+    font-weight: bold;
+  }
+  
