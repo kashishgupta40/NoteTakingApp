@@ -19,6 +19,9 @@ const HomePage = ({ notes, addNote, editNote, deleteNote }) => {
 
   return (
     <div>
+      <header>
+        <h1> Note Taking App</h1>
+      </header>
       <NoteForm addNote={addNote} editNote={editNote} noteToEdit={noteToEdit} />
       <NoteList
         notes={currentNotes}

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import EditPage from './pages/EditPage';
+import './styles.css'; 
 
 const App = () => {
   const [notes, setNotes] = useState([]);
@@ -28,24 +29,14 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <HomePage 
-            notes={notes} 
-            addNote={addNote} 
-            editNote={editNote} 
-            deleteNote={deleteNote} 
-          />
-        </Route>
-        <Route path="/edit/:id">
-          <EditPage 
-            notes={notes} 
-            editNote={editNote} 
-          />
-        </Route>
-      </Switch>
-    </Router>
+    <div className="container">
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage notes={notes} addNote={addNote} editNote={editNote} deleteNote={deleteNote} />} />
+          <Route path="/edit/:id" element={<EditPage notes={notes} editNote={editNote} />} />
+        </Routes>
+      </Router>
+    </div>
   );
 };
 
